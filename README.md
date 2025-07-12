@@ -18,7 +18,3 @@ A basic calculator website built using HTML, CSS, and JavaScript. You can perfor
 - HTML
 - CSS
 - JavaScript
-
-## 📄 License
-MIT License
-
