@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Calculator
+        </title>
+    </head>
+    <style>
+         header{
+            margin-top:none;
+            padding:20px;
+            text-align:center;
+            font-family:'Poppins',sans-serif;
+            color:teal;
+            background-color:black;
+            font-size:20px;
+        }
+        body{
+            text-align:center;
+            background-color:darkgray;
+            font-family:'Poppins',sans-serif;
+            font-size:20px;
+            color:teal;
+            
+        }
+        h1{
+            text-align:center;
+            font-size: 40px;
+            font-weight:bold;
+            font-style:italic;
+        }
+        
+        footer{
+            color:teal;
+            background-color:black;
+            text-align:center;
+            padding:40px;
+            font-size:20px;
+            font-family:'Poppins',sans-serif;
+
+        }
+        input, button{
+            border-color:teal;
+            border-radius:20px;
+            color:maroon;
+        }
+        button{
+            cursor:pointer;
+        }
+        button:active{
+            background-color:lightgrey;
+            color:black;
+            transform: scale(0.98);
+        }
+    </style>
+    <body>
+        <header>
+            <h1>Calculator</h1>
+            <p>A Free calculator website</p>
+        </header>
+        <p>This is a free calculator that can do basic functions. Want to use Google Maths Solver, <a href="https://www.google.com/search?si=AMgyJEvMEMT47SWEI-f5apj11T6NVgQMnnqBHBM3rmSsY_f2_6Zr1OrAmQL2BebYTkM8HyaAY0vP4PSGQ9k1j_jK8NSJLcKrkIDI3rh2XssBvoNZSafrVZopR3WXSAU0RHjhZWXm5fDs">click here</a></p>
+        <input type="text" id="operationInput" name="Operation" placeholder="Enter the operation e.g. 5+3">
+        <button type="button" onclick="Calculate()">Submit</button>
+        <p><em><strong>Result: <span id="result"></strong></em></span></p>
+        <figure>
+            <img src="https://cdn.pixabay.com/photo/2015/11/03/08/53/calculator-1019743_640.jpg" alt="Calculator">
+            <figcaption>Calculator</figcaption>
+        </figure>
+        <footer>
+            <hr>
+            <p>&copy All Rights Reserved. Calculator</p>
+        </footer>
+    </body>
+    <script>
+        function Calculate(){
+            let input= document.getElementById("operationInput").value
+            try{
+                const answer= eval(input)
+                if(isNaN(answer)){
+                    document.getElementById("result").textContent="Invalid Operation"
+                }else{
+                    document.getElementById("result").textContent=answer
+                }
+            }catch(error){
+                document.getElementById("result").textContent="Error: Invalid Input"
+            }
+        }
+    </script>
+</html>
